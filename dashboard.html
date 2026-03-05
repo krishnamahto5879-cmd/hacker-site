@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hacker Dashboard</title>
+
+<style>
+
+body{
+background:black;
+color:#00ff00;
+font-family:Courier New;
+padding:30px;
+}
+
+#terminal{
+white-space:pre-line;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>System Terminal</h2>
+
+<div id="terminal"></div>
+
+<script>
+
+let text = [
+"Connecting to server...",
+"Bypassing firewall...",
+"Decrypting data...",
+"Accessing secure files...",
+"System Access Granted"
+];
+
+let i = 0;
+
+function showText(){
+
+if(i < text.length){
+document.getElementById("terminal").innerHTML += text[i] + "\n";
+i++;
+setTimeout(showText,1000);
+}
+
+}
+
+showText();
+
+</script>
+
+</body>
+</html>

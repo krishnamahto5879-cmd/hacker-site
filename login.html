@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<style>
+body{
+background:black;
+color:#00ff00;
+font-family:Courier New;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+border:2px solid #00ff00;
+padding:30px;
+text-align:center;
+box-shadow:0 0 20px #00ff00;
+}
+
+input{
+display:block;
+margin:10px;
+padding:10px;
+background:black;
+border:1px solid #00ff00;
+color:#00ff00;
+}
+
+button{
+padding:10px;
+margin-top:10px;
+background:black;
+border:1px solid #00ff00;
+color:#00ff00;
+cursor:pointer;
+}
+</style>
+
+<script>
+
+function login(){
+
+let u=document.getElementById("user").value;
+let p=document.getElementById("pass").value;
+
+let savedUser=localStorage.getItem("username");
+let savedPass=localStorage.getItem("password");
+
+if(u==savedUser && p==savedPass)
+{
+window.location="dashboard.html";
+}
+else
+{
+alert("Wrong Username or Password");
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Login</h2>
+
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="login()">Login</button>
+
+<br><br>
+
+<button onclick="window.location='register.html'">
+Create Account
+</button>
+
+</div>
+
+</body>
+</html>
